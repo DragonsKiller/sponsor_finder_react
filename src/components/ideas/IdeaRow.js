@@ -1,12 +1,10 @@
 import React from "react"
 import PropTypes from "prop-types";
 import { Link } from "react-router";
-import Button from '@material-ui/core/Button';
-import MdUpdate from 'react-icons/lib/md/create';
-import MdDelete from 'react-icons/lib/md/delete';
 import { connect } from 'react-redux';
 import { bindActionCreators } from 'redux';
 import * as ideaActions from '../../actions/ideaActions';
+import IdeaColomn from './IdeaColomn';
 
 export class IdeaRow extends React.Component {
   constructor(props, context) {
@@ -14,6 +12,7 @@ export class IdeaRow extends React.Component {
 
     this.state = {
       idea: Object.assign({}, props.idea),
+      ideaKey: Object.assign({}, props.ideaKey),
       errors: {}
     };
     this.deleteIdea = this.deleteIdea.bind(this);
@@ -34,28 +33,14 @@ export class IdeaRow extends React.Component {
    }
 
   render() {
-    const idea = this.state.idea;
+    const { idea } = this.state;
+    const { headers } = this.props;
     return (
       <tr>
         <td><Link to={`/ideas/${idea.id}`}>{ idea.name }</Link></td>
-        <td>{ idea.description }</td>
-        <td>{ idea.problem }</td>
-        <td>{ idea.industry }</td>
-        <td>{ idea.team }</td>
-        <td>{ idea.geographical_focus }</td>
-        <td>{ idea.requirements }</td>
-        <td>{ idea.next_steps }</td>
-        <td>{ idea.trader_id }</td>
-        <td>
-          <Link to={ `/ideas/${idea.id}/edit` }>
-            <Button variant="fab" color="primary" aria-label="edit">
-              <MdUpdate size={25}/>
-            </Button>
-          </Link>
-          <Button variant="fab" color="secondary" aria-label="delete" onClick={ this.deleteIdea }>
-            <MdDelete size={25}/>
-          </Button>
-        </td>
+        { headers.map(header =>
+          <IdeaColomn header = { header } idea = { idea } />
+        )}
       </tr>
     );
   }
@@ -63,7 +48,8 @@ export class IdeaRow extends React.Component {
 
 function mapStateToProps(state, ownProps) {
   return {
-    ideas: state.ideas
+    ideas: state.ideas,
+    headers: state.headers
   };
 }
 

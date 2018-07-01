@@ -22,6 +22,7 @@ class Ideas extends React.Component {
 
   render() {
     const { ideas } = this.props;
+    const { headers } = this.props;
     return (
       <div>
         <h1>Ideas</h1>
@@ -30,7 +31,7 @@ class Ideas extends React.Component {
                className="btn btn-primary"
                onClick={this.redirectToAddIdeaPage}
         />
-      <IdeasList ideas = { ideas }/>
+      <IdeasList ideas = { ideas } headers = { headers }/>
       </div>
     );
   }
@@ -39,7 +40,8 @@ class Ideas extends React.Component {
 
 function mapStateToProps(state, ownProps) {
   return {
-    ideas: state.ideas
+    ideas: state.ideas,
+    headers: state.headers
   };
 }
 
