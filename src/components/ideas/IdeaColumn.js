@@ -5,13 +5,13 @@ import Button from '@material-ui/core/Button';
 import MdUpdate from 'react-icons/lib/md/create';
 import MdDelete from 'react-icons/lib/md/delete';
 
-const IdeaColomn = ({ header, idea }) => {
-  if (header.visible === true && header.code !== "name" && header.code !== "actions") {
+const IdeaColumn = ({ header, idea, onDelete }) => {
+  if (header.visible === true && header.code === "name") {
     return (
-      <td>{ idea[header.code] }</td>
+      <td><Link to={`/ideas/${idea.id}`}>{ idea.name }</Link></td>
     );
   } else {
-    if (header.visible === true && header.code !== "name" && header.code === "actions") {
+    if (header.visible === true && header.code === "actions") {
       return (
         <td>
           <Link to={ `/ideas/${idea.id}/edit` }>
@@ -19,14 +19,21 @@ const IdeaColomn = ({ header, idea }) => {
               <MdUpdate size={25}/>
             </Button>
           </Link>
-          <Button variant="fab" color="secondary" aria-label="delete" onClick={ this.deleteIdea }>
+          <Button variant="fab" color="secondary" aria-label="delete" onClick={ onDelete }>
             <MdDelete size={25}/>
           </Button>
         </td>
       );
+    } else {
+      if (header.visible === true && header.code !== "name" && header.code !== "actions") {
+        return (
+          <td>{ idea[header.code] }</td>
+        );
+      } else {
+        return (null);
+      }
     }
-    return (null);
   }
 }
 
-export default IdeaColomn;
+export default IdeaColumn;

@@ -1,0 +1,17 @@
+.headerDelete{
+  margin-left: 5px;
+  display: none;
+}
+
+.idea-header{
+  padding: 5px;
+}
+
+.idea-header:hover {
+  background-color: rgba(230,230,230,0.7);
+  border-radius: 5px;
+}
+
+.idea-header:hover .headerDelete {
+  display: inline;
+}

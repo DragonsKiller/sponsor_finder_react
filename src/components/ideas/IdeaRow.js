@@ -4,7 +4,7 @@ import { Link } from "react-router";
 import { connect } from 'react-redux';
 import { bindActionCreators } from 'redux';
 import * as ideaActions from '../../actions/ideaActions';
-import IdeaColomn from './IdeaColomn';
+import IdeaColumn from './IdeaColumn';
 
 export class IdeaRow extends React.Component {
   constructor(props, context) {
@@ -12,13 +12,13 @@ export class IdeaRow extends React.Component {
 
     this.state = {
       idea: Object.assign({}, props.idea),
-      ideaKey: Object.assign({}, props.ideaKey),
       errors: {}
     };
     this.deleteIdea = this.deleteIdea.bind(this);
   }
 
   static getDerivedStateFromProps(nextProps, prevState) {
+    console.log(prevState, nextProps);
     if (nextProps.idea.id !== prevState.idea.id) {
       return {
         idea: nextProps.idea
@@ -37,9 +37,12 @@ export class IdeaRow extends React.Component {
     const { headers } = this.props;
     return (
       <tr>
-        <td><Link to={`/ideas/${idea.id}`}>{ idea.name }</Link></td>
         { headers.map(header =>
-          <IdeaColomn header = { header } idea = { idea } />
+          <IdeaColumn
+            header = { header }
+            idea = { idea }
+            onDelete = { this.deleteIdea }
+            />
         )}
       </tr>
     );
