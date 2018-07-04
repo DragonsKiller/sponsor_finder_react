@@ -12,8 +12,8 @@ const IdeasList = ({ ideas, headers }) => {
         <IdeasHeader headers = { headers }/>
       </thead>
       <tbody>
-        { ideas.map((idea, key) =>
-        <IdeaRow key = { idea.id } idea = { idea } ideaKey = { key }/>
+        { ideas.map(idea =>
+        <IdeaRow key = { idea.name } idea = { idea }/>
         )}
       </tbody>
     </Table>

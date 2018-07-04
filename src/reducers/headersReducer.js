@@ -9,6 +9,12 @@ export default function headersReducer(state = initialState.visibleHeaders, acti
         Object.assign({}, action.header)
       ];
 
+    case types.ADD_HEADER_SUCCESS:
+      return [
+        ...state.filter(header => header.code !== action.header.code),
+        Object.assign({}, action.header)
+      ];
+
     default:
       return state;
   }

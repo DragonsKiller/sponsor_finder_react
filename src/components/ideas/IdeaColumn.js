@@ -15,12 +15,12 @@ const IdeaColumn = ({ header, idea, onDelete }) => {
       return (
         <td>
           <Link to={ `/ideas/${idea.id}/edit` }>
-            <Button variant="fab" color="primary" aria-label="edit">
-              <MdUpdate size={25}/>
+            <Button variant="fab" color="primary" aria-label="edit" mini>
+              <MdUpdate size={20}/>
             </Button>
           </Link>
-          <Button variant="fab" color="secondary" aria-label="delete" onClick={ onDelete }>
-            <MdDelete size={25}/>
+          <Button variant="fab" color="secondary" aria-label="delete" mini onClick={ onDelete }>
+            <MdDelete size={20}/>
           </Button>
         </td>
       );

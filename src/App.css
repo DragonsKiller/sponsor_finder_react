@@ -1,6 +1,6 @@
 .headerDelete{
   margin-left: 5px;
-  display: none;
+  visibility: hidden;
 }
 
 .idea-header{
@@ -13,5 +13,28 @@
 }
 
 .idea-header:hover .headerDelete {
-  display: inline;
+  visibility: visible;
+}
+
+.headerDelete:hover {
+  cursor:pointer;
+}
+
+.header-more-vert{
+  cursor:pointer;
+}
+
+.row-update {
+  height: 20px;
+  width: 20px;
+}
+
+i.delete.icon {
+  padding: 5px;
+  color: black !important;
+  visibility: visible;
+}
+
+a.ui.label {
+  color: black !important;
 }

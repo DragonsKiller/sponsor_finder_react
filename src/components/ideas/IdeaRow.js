@@ -18,7 +18,6 @@ export class IdeaRow extends React.Component {
   }
 
   static getDerivedStateFromProps(nextProps, prevState) {
-    console.log(prevState, nextProps);
     if (nextProps.idea.id !== prevState.idea.id) {
       return {
         idea: nextProps.idea

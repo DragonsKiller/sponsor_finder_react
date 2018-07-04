@@ -15,6 +15,7 @@ export class Header extends React.Component {
       header: Object.assign({}, props.header),
       errors: {}
     };
+    
     this.deleteHeader = this.deleteHeader.bind(this);
   }
 
@@ -41,7 +42,6 @@ export class Header extends React.Component {
 }
 
 function mapStateToProps(state, ownProps) {
-  console.log("headersSTPR", state);
   return {
     headers: state.headers
   };
