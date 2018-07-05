@@ -20,7 +20,7 @@ export class Header extends React.Component {
 
   deleteHeader(event) {
     event.preventDefault();
-    this.props.actions.updateHeaderVisibilitySuccess(this.state.header);
+    this.props.actions.updateHeaderVisibilitySuccess(this.props.header);
   }
 
   render() {

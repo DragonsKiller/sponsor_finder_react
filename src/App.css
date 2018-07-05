@@ -5,6 +5,8 @@
 
 .idea-header{
   padding: 5px;
+  display: flex;
+  align-items: center;
 }
 
 .idea-header:hover {
@@ -39,7 +41,7 @@ a.ui.label {
   color: black !important;
 }
 
-.header-dropdown {
+.header-container {
   display: flex;
   align-items: center;
 }

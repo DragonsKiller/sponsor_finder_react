@@ -49,7 +49,7 @@ export class IdeasHeader extends React.Component {
             <div className="dd-header"
               onClick={this.toggleList}
             >
-            <div className="header-dropdown">
+            <div className="header-container">
               <div className="dd-header-title">Headers</div>
               {listOpen
                 ? <ExpandLess name="angle-up" />
