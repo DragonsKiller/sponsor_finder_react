@@ -3,16 +3,11 @@ import initialState from './initialState';
 
 export default function headersReducer(state = initialState.visibleHeaders, action) {
   switch(action.type) {
-    case types.DELETE_HEADER_SUCCESS:
+    case types.UPDATE_HEADER_VISIBILITY_SUCCESS:
+      const newState = [...state];
       return [
-        ...state.filter(header => header.code !== action.header.code),
-        Object.assign({}, action.header)
-      ];
-
-    case types.ADD_HEADER_SUCCESS:
-      return [
-        ...state.filter(header => header.code !== action.header.code),
-        Object.assign({}, action.header)
+        ...newState.filter(header => header.code !== action.newHeader.code),
+        action.newHeader,
       ];
 
     default:

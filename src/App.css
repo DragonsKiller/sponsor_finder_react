@@ -38,3 +38,8 @@ i.delete.icon {
 a.ui.label {
   color: black !important;
 }
+
+.header-dropdown {
+  display: flex;
+  align-items: center;
+}

@@ -12,20 +12,19 @@ export class Header extends React.Component {
     super(props, context);
 
     this.state = {
-      header: Object.assign({}, props.header),
       errors: {}
     };
-    
+
     this.deleteHeader = this.deleteHeader.bind(this);
   }
 
   deleteHeader(event) {
     event.preventDefault();
-    this.props.actions.deleteHeaderSuccess(this.state.header);
+    this.props.actions.updateHeaderVisibilitySuccess(this.state.header);
   }
 
   render() {
-    const { header } = this.state;
+    const { header } = this.props;
     if (header.visible === true) {
       return (
         <th>
