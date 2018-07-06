@@ -13,8 +13,6 @@ export class IdeaEdit extends React.Component {
       idea: Object.assign({}, props.idea),
       errors: {}
     };
-    this.updateIdeaState = this.updateIdeaState.bind(this);
-    this.editIdea = this.editIdea.bind(this);
   }
 
   static getDerivedStateFromProps(nextProps, prevState) {
@@ -26,14 +24,14 @@ export class IdeaEdit extends React.Component {
     return null;
    }
 
-  updateIdeaState(event) {
+  updateIdeaState = (event) => {
     const field = event.target.name;
     let idea = this.state.idea;
     idea[field] = event.target.value;
     return this.setState({ idea });
   }
 
-  editIdea(event) {
+  editIdea = (event) => {
     event.preventDefault();
     this.props.actions.editIdea(this.state.idea).then(() => {
       this.context.router.push(`/ideas/${this.state.idea.id}`);

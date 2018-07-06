@@ -9,14 +9,13 @@ import axios from 'axios';
 class Ideas extends React.Component {
   constructor(props, context) {
     super(props, context);
-    this.redirectToAddIdeaPage = this.redirectToAddIdeaPage.bind(this);
   }
 
   componentDidMount() {
     this.props.actions.loadIdeas();
   }
 
-  redirectToAddIdeaPage() {
+  redirectToAddIdeaPage = () => {
     browserHistory.push('/ideas/new');
   }
 

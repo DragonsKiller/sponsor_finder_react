@@ -14,11 +14,9 @@ export class Header extends React.Component {
     this.state = {
       errors: {}
     };
-
-    this.deleteHeader = this.deleteHeader.bind(this);
   }
 
-  deleteHeader(event) {
+  deleteHeader = (event) => {
     event.preventDefault();
     this.props.actions.updateHeaderVisibilitySuccess(this.props.header);
   }

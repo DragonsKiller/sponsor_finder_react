@@ -14,7 +14,6 @@ export class IdeaRow extends React.Component {
       idea: Object.assign({}, props.idea),
       errors: {}
     };
-    this.deleteIdea = this.deleteIdea.bind(this);
   }
 
   static getDerivedStateFromProps(nextProps, prevState) {
@@ -26,7 +25,7 @@ export class IdeaRow extends React.Component {
     return null;
    }
 
-   deleteIdea(event) {
+   deleteIdea = (event) => {
      event.preventDefault();
      this.props.actions.deleteIdea(this.state.idea.id);
    }

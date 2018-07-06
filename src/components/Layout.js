@@ -4,7 +4,7 @@ import $ from 'jquery';
 class Layout extends React.Component {
   constructor(props) {
     super(props)
-    this.state = {bananasReceived: ""}
+    this.state = { bananasReceived: "" }
   }
 
   login () {
