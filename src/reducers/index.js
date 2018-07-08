@@ -4,7 +4,7 @@ import headers from './headersReducer';
 
 const rootReducer = combineReducers({
   ideas,
-  headers
+  headers,
 });
 
 export default rootReducer;
