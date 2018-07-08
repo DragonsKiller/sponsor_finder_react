@@ -8,7 +8,7 @@ import Idea from './components/ideas/Idea';
 import LoginPage from './components/auth/LoginPage';
 
 
-export function requireAuth(nextState) {
+function requireAuth(nextState) {
   //localStorage.clear();
   console.log(localStorage);
   localStorage.getItem('user')

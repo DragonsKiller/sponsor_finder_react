@@ -40,7 +40,7 @@ export class IdeasHeader extends React.Component {
     const { headers } = this.props;
     const { listOpen } = this.state;
     return (
-      <tr>
+      <tr className="ideas-header">
         { headers.map(header =>
           <Header header = { header } />
         )}
@@ -70,7 +70,7 @@ export class IdeasHeader extends React.Component {
                     {header.title}
                     {
                       header.visible &&
-                      <MdDone name="check"/>
+                      <MdDone className="header-check" name="check"/>
                     }
                 </li>
               ))}

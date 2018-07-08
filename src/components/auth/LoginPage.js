@@ -3,6 +3,7 @@ import $ from 'jquery';
 import TextInput from '../common/TextInput';
 import axios from 'axios';
 import  { Redirect } from 'react-router-dom'
+import '../../App.css';
 
 class LoginPage extends React.Component {
   constructor(props) {
@@ -33,48 +34,45 @@ class LoginPage extends React.Component {
   render() {
     console.log(localStorage);
     return (
-      <div className="App">
-        <h1 style={{marginTop: "20vh", marginBottom: "5vh"}}>
-          Ideas Sponsors Finder
-        </h1>
-        <form>
-          <label htmlFor="email">Email: </label>
-          <br />
-          <TextInput
-            name="email"
-            id="email"
-            type="email"
-            style={{marginRight: '5px'}}
-            placeholder="email"
-            onChange={event => this.setState({email: event.target.value})}
-          />
-          <br /><br />
-          <label htmlFor="password">Password:</label>
-          <br />
-          <TextInput
-            name="password"
-            id="password"
-            type="password"
-            secureTextEntry={true}
-            password={true}
-            style={{marginRight: '5px'}}
-            placeholder="password"
-            onChange={event => this.setState({password: event.target.value})}
-          />
-        </form>
-          <br />
-          <button
-            className="btn btn-primary"
-            type="button"
-            onClick={this.login}
-          >
-              Login
-          </button>
-        <br />
-      </div>
+        <div className="modal-dialog">
+            <div className="loginmodal-container">
+              <h1>Login to Your Account</h1><br />
+                <form>
+                  <TextInput
+                    name="email"
+                    id="email"
+                    type="email"
+                    style={{marginRight: '5px'}}
+                    placeholder="Email"
+                    onChange={event => this.setState({email: event.target.value})}
+                  />
+
+                  <TextInput
+                    name="password"
+                    id="password"
+                    type="password"
+                    secureTextEntry={true}
+                    password={true}
+                    style={{marginRight: '5px'}}
+                    placeholder="Password"
+                    onChange={event => this.setState({password: event.target.value})}
+                  />
+                </form>
+                  <br />
+                  <button
+                    className="btn btn-primary"
+                    type="button"
+                    onClick={this.login}
+                  >
+                      Sign in
+                  </button>
+            </div>
+          </div>
     );
 
   }
 }
+
+
 
 export default LoginPage;

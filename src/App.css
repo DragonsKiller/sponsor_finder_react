@@ -3,6 +3,11 @@
   visibility: hidden;
 }
 
+ideas-header {
+  display: flex;
+
+}
+
 .idea-header{
   padding: 5px;
   display: flex;
@@ -26,6 +31,10 @@
   cursor:pointer;
 }
 
+.header-check {
+  padding-left: 3px;
+}
+
 .row-update {
   height: 20px;
   width: 20px;
@@ -42,6 +51,76 @@ a.ui.label {
 }
 
 .header-container {
+  padding: 5px;
   display: flex;
   align-items: center;
+  cursor:pointer;
+}
+
+.menu {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.dd-list{
+  display: flex;
+  flex-direction: column;
+  padding-left: 10px;
+  list-style-type: none;
+  min-width: 170px;
+  max-width: 180px;
+  background-color: #f2f2f2;
+}
+
+.dd-list-item {
+  cursor:pointer;
+  padding: 5px;
+  display: flex;
+  justify-content: space-between;
+}
+
+.dd-list-item:hover {
+  background-color: rgba(230,230,230,0.7);
+  border-radius: 5px;
+}
+/* login page */
+
+
+/****** LOGIN MODAL ******/
+.loginmodal-container {
+  padding: 30px;
+  max-width: 350px;
+  width: 100% !important;
+  background-color: #F7F7F7;
+  margin: 0 auto;
+  border-radius: 2px;
+  box-shadow: 0px 2px 2px rgba(0, 0, 0, 0.3);
+  overflow: hidden;
+  font-family: roboto;
+}
+
+.loginmodal-container h1 {
+  text-align: center;
+  font-size: 1.8em;
+  font-family: roboto;
+}
+
+.btn.btn-primary {
+  width: 100%;
+  display: block;
+  margin-bottom: 10px;
+  position: relative;
+}
+
+.loginmodal {
+  text-align: center;
+  font-size: 14px;
+  font-family: 'Arial', sans-serif;
+  font-weight: 700;
+  height: 36px;
+  padding: 0 8px;
+/* border-radius: 3px; */
+/* -webkit-user-select: none;
+  user-select: none; */
 }

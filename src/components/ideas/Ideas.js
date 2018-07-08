@@ -5,6 +5,8 @@ import * as ideaActions from '../../actions/ideaActions';
 import {browserHistory} from 'react-router';
 import IdeasList from './IdeasList';
 import axios from 'axios';
+import SignOut from 'react-icons/lib/fa/sign-out';
+import Button from '@material-ui/core/Button';
 
 class Ideas extends React.Component {
   constructor(props, context) {
@@ -19,12 +21,30 @@ class Ideas extends React.Component {
     browserHistory.push('/ideas/new');
   }
 
+  logout = () => {
+    localStorage.clear();
+    browserHistory.push('/login');
+  }
+
   render() {
     const { ideas } = this.props;
     const { headers } = this.props;
     return (
       <div>
-        <h1>Ideas</h1>
+        <div className="menu">
+          <h1>Ideas</h1>
+          <div className="menu-button">
+            <Button
+              variant="contained"
+              color="secondary"
+              size="small"
+              onClick={this.logout}
+            >
+              <SignOut size={20} />
+            </Button>
+          </div>
+        </div>
+
         <input type="submit"
                value="Add Idea"
                className="btn btn-primary"
